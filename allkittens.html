@@ -1,0 +1,25 @@
+<!-- navigation start -->
+<div class="navbar">
+  <nav class="orange lighten-1">
+    <div class="nav-wrapper">
+      <a href="#/" class="brand-logo left waves-effect waves-blue"><h4>Kitten Collector</h4></a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a href="#/new" class="waves-effect waves-blue"><i class="material-icons left">pets</i>Add Your Kitten</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<!-- navigation end -->
+
+<!-- all kittens content -->
+<div class="container">
+  <div ng-repeat="kitten in kittenCtrl.kittens">
+    <h1>Name: {{kitten.name}}</h1>
+    <img ng-src="{{kitten.image}}">
+    <h2>Bio: {{kitten.bio}}</h2>
+    <h2>likes: {{kitten.likes}}</h2>
+  </div>
+</div>
+<!-- all kittens content end -->
