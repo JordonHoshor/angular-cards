@@ -16,7 +16,12 @@
       controller: 'newKittenController',
       controllerAs: 'newKittenCtrl',
       templateUrl: 'newkitten.html'
-    });
+    })
+    .when('/comments/:id', {
+      controller: 'newCommentController',
+      controllerAs: 'commentCtrl',
+      templateUrl: 'newcomment.html'
+    })
   }
 
 })();
