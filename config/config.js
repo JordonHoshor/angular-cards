@@ -10,17 +10,17 @@
       .when('/', {
         controller: 'kittenController',
         controllerAs: 'kittenCtrl',
-        templateUrl: 'allkittens.html'
+        templateUrl: './allkitten/allkittens.html'
       })
       .when('/new', {
         controller: 'newKittenController',
         controllerAs: 'newKittenCtrl',
-        templateUrl: 'newkitten.html'
+        templateUrl: './newkitten/newkitten.html'
       })
       .when('/comments/:id', {
         controller: 'newCommentController',
         controllerAs: 'commentCtrl',
-        templateUrl: 'newcomment.html'
+        templateUrl: './newcomment/newcomment.html'
       });
   }
 
