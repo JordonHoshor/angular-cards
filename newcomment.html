@@ -1,0 +1,61 @@
+<!-- nav/header -->
+<div class="navbar">
+  <nav class="orange lighten-1">
+    <div class="nav-wrapper">
+      <a href="#/" class="brand-logo left waves-effect waves-blue"><h4>Kitten Collector</h4></a>
+    </div>
+  </nav>
+</div>
+<!-- nav/header end -->
+
+<!-- new comment content -->
+<div class="col s4">
+  <div class="card z-depth-5 grey lighten-2">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" ng-src="{{commentCtrl.singleKitten.image}}">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">{{commentCtrl.singleKitten.name}}<i class="material-icons right">expand_less</i></span>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">{{commentCtrl.singleKitten.name}}<i class="material-icons right">expand_more</i></span>
+      <p>{{commentCtrl.singleKitten.bio}}</p>
+      <ul class="col s5 pull-s3 collapsible popout" data-collapsible="accordion" watch>
+        <li ng-repeat="single in commentCtrl.collapsibleElements">
+          <div class="collapsible-header waves-effect waves-blue">
+            <i class="material-icons">comment</i>{{commentCtrl.singleKitten.comments.length}}
+            <ng-pluralize count="kitten.comments.length" when="{
+              '0': 'Comments',
+              '1': 'Comment',
+              'other': 'Comments'}">
+            </ng-pluralize>
+          </div>
+          <div ng-repeat="comment in commentCtrl.singleKitten.comments" class="collapsible-body">
+            <p>{{comment.author}}: {{comment.text}}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- comment content end -->
+
+<!-- new comment form -->
+<div class="row">
+  <form ng-submit="commentCtrl.createComment(kitten.id, newCommentObj)" class="col s7" novalidate>
+    <div class="row">
+      <div class="input-field col s12">
+        <input ng-model="newCommentObj.author" id="author" type="text" class="validate">
+        <label for="author">Author</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input ng-model="newCommentObj.text" id="comment" type="text" class="validate">
+        <label for="comment">Comment</label>
+      </div>
+    </div>
+    <button type="submit" class="waves-effect waves-yellow btn">Add New Comment</button>
+  </form>
+</div>
+<!-- form end -->

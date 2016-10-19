@@ -26,9 +26,27 @@
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">{{kitten.name}}<i class="material-icons right">expand_more</i></span>
         <p>{{kitten.bio}}</p>
+        <ul class="col s5 pull-s3 collapsible popout" data-collapsible="accordion" watch>
+          <li ng-repeat="single in kittenCtrl.collapsibleElements">
+            <div class="collapsible-header waves-effect waves-blue">
+              <i class="material-icons">comment</i>{{kitten.comments.length}}
+              <ng-pluralize count="kitten.comments.length" when="{
+                '0': 'Comments',
+                '1': 'Comment',
+                'other': 'Comments'}">
+              </ng-pluralize>
+            </div>
+            <div ng-repeat="comment in kitten.comments" class="collapsible-body">
+              <p>{{comment.author}}: {{comment.text}}</p>
+            </div>
+          </li>
+        </ul>
+      <div>
         <span ng-click="kittenCtrl.thumbUp(kitten.id, kitten.votes)"><i class="material-icons left">thumb_up</i></span>
         <span ng-click="kittenCtrl.thumbDown(kitten.id, kitten.votes)"><i class="material-icons left">thumb_down</i></span>
         <span>| Likes: {{kitten.votes}}</span>
+      </div>
+        <a class="comment waves-effect waves-blue btn white black-text" ng-href="#/comments/{{kitten.id}}">Add Comment</a>
       </div>
     </div>
   </div>

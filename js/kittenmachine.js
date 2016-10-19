@@ -31,6 +31,7 @@
       const kittenID = allKittens[allKittens.length - 1].id;
       kittenObj.id = kittenID + 1;
       kittenObj.votes = 0;
+      kittenObj.comments = [];
       allKittens.push(kittenObj);
     };
 
@@ -38,8 +39,8 @@
       allKittens[kitten.id - 1].votes = parseInt(votes);
     };
 
-    kittens.newComment = (kitten, comment) => {
-      allKittens[kitten.id - 1].comments.push(comment);
+    kittens.newComment = (kitten, commentObj) => {
+      allKittens[kitten.id - 1].comments.push(commentObj);
     };
 
     return kittens;
