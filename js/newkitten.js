@@ -6,11 +6,10 @@
   newKittenController.$inject = ['$location', 'kittenMachine'];
 
   function newKittenController($location, kittenMachine) {
-    var target = this;
-    target.newKitten = {};
+    this.newKitten = {};
 
-    target.addKitten = (newKitten) => {
-      kittenMachine.addNewKitten(target.newKitten);
+    this.addKitten = (newKitten) => {
+      kittenMachine.addNewKitten(this.newKitten);
       $location.path('/');
     };
   }

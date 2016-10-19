@@ -13,13 +13,24 @@
 </div>
 <!-- navigation end -->
 
-<!-- all kittens content -->
-<div class="container">
-  <div ng-repeat="kitten in kittenCtrl.kittens">
-    <h1>Name: {{kitten.name}}</h1>
-    <img ng-src="{{kitten.image}}">
-    <h2>Bio: {{kitten.bio}}</h2>
-    <h2>likes: {{kitten.likes}}</h2>
+<!-- all kittens cards -->
+<div ng-repeat="kitten in kittenCtrl.kittens | orderBy:kittenCtrl.filter | filter:search">
+  <div class="col s4">
+    <div class="card z-depth-5 grey lighten-2">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" ng-src="{{kitten.image}}">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">{{kitten.name}}<i class="material-icons right">expand_less</i></span>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">{{kitten.name}}<i class="material-icons right">expand_more</i></span>
+        <p>{{kitten.bio}}</p>
+        <span ng-click="kittenCtrl.thumbUp(kitten.id, kitten.votes)"><i class="material-icons left">thumb_up</i></span>
+        <span ng-click="kittenCtrl.thumbDown(kitten.id, kitten.votes)"><i class="material-icons left">thumb_down</i></span>
+        <span>| Likes: {{kitten.votes}}</span>
+      </div>
+    </div>
   </div>
 </div>
-<!-- all kittens content end -->
+<!-- all kittens cards end -->
