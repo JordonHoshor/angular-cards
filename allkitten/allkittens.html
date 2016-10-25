@@ -42,9 +42,10 @@
           </li>
         </ul>
       <div>
-        <span ng-click="kittenCtrl.thumbUp(kitten.id, kitten.votes)"><i class="material-icons left">thumb_up</i></span>
+        <thumbs></thumbs>
+        <!-- <span ng-click="kittenCtrl.thumbUp(kitten.id, kitten.votes)"><i class="material-icons left">thumb_up</i></span>
         <span ng-click="kittenCtrl.thumbDown(kitten.id, kitten.votes)"><i class="material-icons left">thumb_down</i></span>
-        <span>| Likes: {{kitten.votes}}</span>
+        <span>| Likes: {{kitten.votes}}</span> -->
       </div>
         <a class="comment waves-effect waves-blue btn white black-text" ng-href="#/comments/{{kitten.id}}">Add Comment</a>
       </div>

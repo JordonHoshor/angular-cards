@@ -1,0 +1,7 @@
+<!-- vote thumbs up or down -->
+<div ng-repeat="kitten in thumbCtrl.kittens">
+  <span ng-click="thumbCtrl.thumbUp(kitten.id, kitten.votes)"><i class="material-icons left">thumb_up</i></span>
+  <span ng-click="thumbCtrl.thumbDown(kitten.id, kitten.votes)"><i class="material-icons left">thumb_down</i></span>
+  <p>| Likes: {{kitten.votes}}</p>
+</div>
+<!-- end votes content -->
