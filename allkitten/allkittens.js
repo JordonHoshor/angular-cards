@@ -13,15 +13,15 @@
       title: ''
     }];
 
-    // target.thumbUp = (kittyID, votes) => {
-    //   const kitty = kittenMachine.getSingleKitten(kittyID)[0];
-    //   kittenMachine.currentVotes(kitty, votes + 1);
-    // };
-    //
-    // target.thumbDown = (kittenID, votes) => {
-    //   const kitten = kittenMachine.getSingleKitten(kittenID)[0];
-    //   kittenMachine.currentVotes(kitten, votes - 1);
-    // };
+    target.thumbUp = (kittyID, votes) => {
+      const kitty = kittenMachine.getSingleKitten(kittyID)[0];
+      kittenMachine.currentVotes(kitty, votes + 1);
+    };
+
+    target.thumbDown = (kittenID, votes) => {
+      const kitten = kittenMachine.getSingleKitten(kittenID)[0];
+      kittenMachine.currentVotes(kitten, votes - 1);
+    };
 
   }
 
