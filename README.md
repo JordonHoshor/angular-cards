@@ -1,6 +1,6 @@
 # Angular-Cards
 
-- Here is the live version http://jordonhoshor.com/angular-cards/#/
+- Here is the live version https://jordonhoshor.github.io/angular-cards/#/
 
 # Features
 
